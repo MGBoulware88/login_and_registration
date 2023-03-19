@@ -1,0 +1,13 @@
+✔ Database! @done (3/18/2023, 2:11:29 PM)
+✔ MVC file structure @done (3/18/2023, 2:11:34 PM)
+✔ Check import statements @done (3/18/2023, 4:00:44 PM)
+✔ Setup pipenv, flask, flash, shell, bcrypt @done (3/18/2023, 4:00:51 PM)
+✔ Test Server and landing.html renders @done (3/18/2023, 4:00:53 PM)
+✔ Create all the html files @done (3/18/2023, 4:00:55 PM)
+☐ Create routes for all renders 
+        I am working on the validate for reg form
+☐ Create the class model(s)
+☐ Finish the routes with the class methods
+☐ Add validation
+☐ Add styling
+☐ Test all routes and logic again!

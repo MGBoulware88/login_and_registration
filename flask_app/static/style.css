@@ -1,0 +1,27 @@
+.container {
+    margin: 1rem;
+}
+
+.container * {
+    margin-bottom: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+tr a {
+    float: right;
+}
+
+a {
+    list-style: none;
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: rgb(34, 130, 219);
+}
