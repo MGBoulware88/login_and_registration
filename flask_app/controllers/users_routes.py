@@ -4,11 +4,13 @@ from flask_app.models.user import User
 from flask_bcrypt import Bcrypt
 bcrypt = Bcrypt(app)
 
+
+############# LANDING PAGE
 @app.route("/")
 def landing():
     return render_template("landing.html")
 
-
+############# NEW USER REGISTER FLOW
 @app.route("/users/register", methods=['POST'])
 def register():
     # validate inputs
@@ -27,6 +29,8 @@ def register():
     print("Logging in!")
     return redirect(f"/users/{user_id}/dashboard")
 
+
+############# USER DASHBOARD -- REQUIRES LOGIN
 @app.route("/users/<int:id>/dashboard")
 def dashboard(id):
     # check for login first
@@ -39,6 +43,7 @@ def dashboard(id):
     return render_template("dashboard.html", first_name=user.first_name)
 
 
+############# USER LOGIN FLOW
 @app.route("/users/login", methods=['POST'])
 def login_user():
     #check email by trying to instantiate a user
@@ -55,7 +60,7 @@ def login_user():
     session['user_id'] = existing_user.id
     return redirect(f"/users/{session['user_id']}/dashboard")
 
-
+############# USER LOGOUT FLOW
 @app.route("/users/logout")
 def logout_user():
     session.clear()

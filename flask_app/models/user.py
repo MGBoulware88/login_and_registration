@@ -14,11 +14,13 @@ class User:
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
 
+############# INSERT USER INTO DB
     @classmethod
     def create_user(cls, data):
         query = "INSERT INTO users (first_name, last_name, email, password) VALUES (%(first_name)s, %(last_name)s, %(email)s, %(password)s);"
         return connectToMySQL(DB).query_db(query, data)
     
+############# GRAB EVERY USER FROM DB    
     @classmethod
     def read_all_users(cls):
         query = "SELECT * FROM users;"
@@ -27,7 +29,8 @@ class User:
         for user in results:
             users_list.append(cls(user))
         return users_list
-    
+
+############# GRAB 1 USER BY ID  
     @classmethod
     def read_one_user_by_id(cls, id):
         query = "SELECT * FROM users WHERE id=%(id)s;"
@@ -36,7 +39,8 @@ class User:
         }
         results = connectToMySQL(DB).query_db(query, data)
         return cls(results[0])
-    
+
+############# GRAB 1 USER BY EMAIL
     @classmethod
     def read_one_user_by_email(cls, email):
         query = "SELECT * FROM users WHERE email = %(email)s;"
@@ -49,7 +53,7 @@ class User:
         
         return cls(results[0])
     
-
+############# VALIDATE REG FORM INPUTS
     @staticmethod
     def validate_reg(data):
         regex = re.compile('[@_!#$%^&*()<>?/|}{~:]')

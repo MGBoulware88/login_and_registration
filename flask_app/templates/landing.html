@@ -23,6 +23,7 @@
                 </ul>
                 {% endif %}
             {% endwith %}
+            <!-- BASIC REG FORM -->
             <form action="/users/register" method="POST">
                 <p>First Name:</p>
                 <input type="text" name="first_name">
@@ -54,6 +55,7 @@
                 </ul>
                 {% endif %}
             {% endwith %}
+            <!-- EMAIL/PW LOGIN FORM -->
             <form action="/users/login" method="POST">
                 <p>Email:</p>
                 <input type="text" name="email">
